@@ -65,7 +65,7 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 ### Configurações no PagSeguro: ###
 Isto é importante! Sem isto o status dos seus pedidos não serão atualizados:
-![Configurações do plugin.](https://drive.google.com/file/d/0B3CG2TplH3fzQVVQcm5HRkRMdjQ/view?usp=sharing)
+![Configurações do plugin.](https://uploaddeimagens.com.br/images/000/972/674/original/Screenshot_1.png?1498939879)
 
 
 
