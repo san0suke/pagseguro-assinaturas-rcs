@@ -46,7 +46,7 @@ Estão disponíveis as seguintes modalidades de pagamento:
 
 Padrão: Cliente é redirecionado ao PagSeguro para concluir a compra.
 
-Além que é possível utilizar o novo [sandbox do PagSeguro](https://sandbox.pagseguro.uol.com.br/vendedor/configuracoes.html).
+Além que é possível utilizar o [sandbox do PagSeguro](https://sandbox.pagseguro.uol.com.br/vendedor/configuracoes.html).
 
 
 ### Colaborar ###
@@ -69,6 +69,8 @@ Isto é importante! Sem a etapa abaixo o status dos seus pedidos não serão atu
 O plugin irá gerar a url de notificação correta para seu site no formato: "https://seusite.com.br/?wc-api=PGA_Gateway"
 ![Configurações do plugin.](https://uploaddeimagens.com.br/images/000/972/674/original/Screenshot_1.png?1498939879)
 
+Se você desejar testar o plugin antes de usar oficialmente faça a etapa seguinte, caso contrário pule ela:
+![Informar a URL de noficações no sandbox](http://uploaddeimagens.com.br/images/000/972/688/original/Screenshot_3.png?1498940426)
 
 
 
