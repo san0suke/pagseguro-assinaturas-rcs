@@ -9,9 +9,13 @@ Este é um plugin para Wordpress que realiza pagamentos recorrentes (assinaturas
 ### WooCommerce PagSeguro Assinaturas ###
 
 Contributors: Robson Cesar de Siqueira
+
 Donate link: [https://pag.ae/bglK2vV](https://pag.ae/bglK2vV)
+
 Tags: woocommerce, pagseguro, assinaturas, payment
+
 License: GPLv2 or later
+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Adds PagSeguro gateway to the WooCommerce plugin
