@@ -63,3 +63,10 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 É necessário possuir uma conta no [PagSeguro](http://pagseguro.uol.com.br/) e ter instalado o [WooCommerce](http://wordpress.org/plugins/woocommerce/).
 
 
+### Configurações no PagSeguro: ###
+Isto é importante! Sem isto o status dos seus pedidos não serão atualizados:
+![Configurações do plugin.](https://drive.google.com/file/d/0B3CG2TplH3fzQVVQcm5HRkRMdjQ/view?usp=sharing)
+
+
+
+
