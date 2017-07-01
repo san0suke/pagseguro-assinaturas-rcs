@@ -14,73 +14,6 @@ class PGA_Controller {
         }
     }
 
-    function ativar() {
-        global $wpdb;
-
-//        $this->createHtaccessAuthorization();
-
-        $instalacao_completa = get_option("pga_instalacao_completa");
-        if (!$instalacao_completa) {
-            add_option('pga_pga_chave_seguranca', '', '', 'yes');
-            add_option('pga_instalacao_completa', false, '', 'yes');
-            update_option('pagseguro-assinaturas-rcs-versao', '1.0');
-
-            // $sql = self::readSql(plugins_url( "pagseguro-assinaturas-rcs/sqls/bd.sql" ));
-            // try {
-            // 	$wpdb->query('START TRANSACTION');
-            // 	self::execute_multiline_sql($sql);
-            // 	$wpdb->query('COMMIT');
-            // } catch (Exception $e) {
-            // 	exit("<h2>Não Foi Possível Instalar o Plugin</h2>");
-            // }
-        } else {
-            $arrPluginData = get_plugin_data(WP_PLUGIN_DIR . "/pagseguro-assinaturas-rcs/pagseguro-assinaturas-rcs.php");
-            $versaoAtual = get_option('pagseguro-assinaturas-rcs-versao');
-            if ($arrPluginData['Version'] > $versaoAtual) {
-                self::atualizar($versaoAtual);
-            }
-        }
-    }
-
-    function atualizar($versao) {
-        global $wpdb;
-        switch ($versao) {
-            default:
-                break;
-        }
-        //update_option('pagseguro-assinaturas-rcs', '1.1');
-    }
-
-    function desativar() {
-        
-    }
-
-    function readSql($caminho) {
-        $ponteiro = fopen($caminho, "r");
-        while (!feof($ponteiro)) {
-            $sql .= fgets($ponteiro, 4096);
-        }
-        fclose($ponteiro);
-        return $sql;
-    }
-
-    function execute_multiline_sql($sql) {
-        global $wpdb;
-        $sqlParts = array_filter(explode(";", $sql));
-        foreach ($sqlParts as $part) {
-            if (trim($part)) {
-                $wpdb->query($part);
-                $wpdb->print_error();
-                if ($wpdb->last_error != '') {
-                    $error = new WP_Error("dberror", __("Database query error"), $wpdb->last_error);
-                    $wpdb->query("rollback;");
-                    return $error;
-                }
-            }
-        }
-        return true;
-    }
-
     public static function formatBRL($value) {
         return self::formatNumber($value, 2, 5, ",", ".");
     }
@@ -115,41 +48,6 @@ class PGA_Controller {
         } else {
             return number_format($valNumber, $minDecimals, $d, $m);
         }
-    }
-
-    function getErrorMessage() {
-        global $retornoPagseguro;
-
-        if ($retornoPagseguro['body']) {
-            $body = get_object_vars(json_decode($retornoPagseguro['body']));
-            if ($body['errors']) {
-                foreach ($body['errors'] as $key => $value) {
-                    $error = get_object_vars($value);
-                    $mensagem .= $error['description'] . '. ';
-                }
-            }
-        } else {
-            $mensagem .= $retornoPagseguro['response']['message'];
-        }
-        return $mensagem;
-    }
-
-    function mensagem_pagseguro($url) {
-        global $retornoPagseguro;
-
-        $mensagem = $this->getErrorMessage();
-
-        $url = add_query_arg('mensagem_pagseguro', $mensagem, $url);
-        return add_query_arg('codigo_pagseguro', $retornoPagseguro['response']['code'], $url);
-    }
-
-    function last_requisicao_verificacao_sucesso() {
-        global $retornoPagseguro;
-        return $this->verificacao_sucesso($retornoPagseguro['response']['code']);
-    }
-
-    function verificacao_sucesso($codigo_resposta) {
-        return $codigo_resposta >= 200 && $codigo_resposta < 400;
     }
 
     function admin_enqueue_style_scripts() {

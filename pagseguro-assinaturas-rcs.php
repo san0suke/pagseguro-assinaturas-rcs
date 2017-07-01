@@ -34,12 +34,6 @@ function loadCreboxPagseguroAssinaturas() {
     //gateway wordpress actions
     $pga_gateway->add_gateway_actions();
 
-    // Função ativar
-    register_activation_hook(__FILE__, array($pga_controller, 'ativar'));
-
-    // Função desativar
-    register_deactivation_hook(__FILE__, array($pga_controller, 'desativar'));
-
     // Display Fields
     add_action('woocommerce_product_options_general_product_data', array($planos, 'add_campos_plano'));
 
@@ -54,7 +48,6 @@ function loadCreboxPagseguroAssinaturas() {
     // Save Fields
     add_action('woocommerce_process_product_meta', array($planos, 'save_campos_plano'));
     add_action('woocommerce_product_quick_edit_save', array($planos, 'quick_edit_save_plano'));
-    add_action('woocommerce_product_bulk_edit_save', array($planos, 'bulk_edit_save_plano'));
     
     // Avisos
     add_action('admin_notices', array($planos, 'pga_admin_notices'));
