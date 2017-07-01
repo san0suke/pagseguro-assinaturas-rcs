@@ -50,6 +50,16 @@ Além que é possível utilizar o novo [sandbox do PagSeguro](https://sandbox.pa
 
 
 ### Colaborar ###
+
 Este plugin ainda precisa de muitas melhorias e não foi intensamente testado.
+
 Por favor, se encontrarem bugs entrem em contato.
+
 Você pode contribuir com código-fonte em nossa página no [GitHub](https://github.com/san0suke/pagseguro-assinaturas-rcs).
+
+
+### Requerimentos: ###
+
+É necessário possuir uma conta no [PagSeguro](http://pagseguro.uol.com.br/) e ter instalado o [WooCommerce](http://wordpress.org/plugins/woocommerce/).
+
+
