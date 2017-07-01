@@ -65,7 +65,8 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 ### Configurações no PagSeguro: ###
 Isto é importante! Sem a etapa abaixo o status dos seus pedidos não serão atualizados.
-O plugin irá gerar a url de notificação correta para seu site no formato "https://seusite.com.br/?wc-api=PGA_Gateway"
+
+O plugin irá gerar a url de notificação correta para seu site no formato: "https://seusite.com.br/?wc-api=PGA_Gateway"
 ![Configurações do plugin.](https://uploaddeimagens.com.br/images/000/972/674/original/Screenshot_1.png?1498939879)
 
 
