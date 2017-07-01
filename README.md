@@ -1,12 +1,12 @@
 # pagseguro-assinaturas-rcs
-Pagseguro Assinaturas
+### Pagseguro Assinaturas ###
 
 <a target="_blank" href="https://pag.ae/bglK2vV">
 <img alt="Doar com Paypal" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif"/></a>
 
 Este é um plugin para Wordpress que realiza pagamentos recorrentes (assinaturas).
 
-WooCommerce PagSeguro Assinaturas
+### WooCommerce PagSeguro Assinaturas ###
 
 Contributors: Robson Cesar de Siqueira
 Donate link: https://pag.ae/bglK2vV
@@ -16,7 +16,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Adds PagSeguro gateway to the WooCommerce plugin
 
-Description
+### Description ###
 
 Add PagSeguro Signatures gateway to WooCommerce
 
@@ -24,11 +24,11 @@ This plugin adds PagSeguro Signatures gateway to WooCommerce.
 
 Please notice that WooCommerce must be installed and active.
 
-Contribute
+### Contribute ###
 
 You can contribute to the source code in our GitHub page.
 
-Descrição em Português:
+### Descrição em Português: ###
 
 Adicione o PagSeguro Assinaturas como método de pagamento em sua loja WooCommerce.
 
