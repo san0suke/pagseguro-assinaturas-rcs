@@ -77,5 +77,10 @@ Preencha o campo "Definir URL para receber as notificações" com a URL que o pl
 Também copie seu token e seu email para informar na tela do plugin:
 ![Informar a URL de noficações no sandbox](http://uploaddeimagens.com.br/images/000/972/688/original/Screenshot_3.png?1498940426)
 
+Quando você decidir terminar os testes, e colocar no ambiente real (produção), continue para esta etapa.
+Entre na sua [conta real do Pagseguro](https://pagseguro.uol.com.br/preferencias/integracoes.jhtml), em seguida "Preferências" > "Integrações" e preencha o campo "Notificação de transação", e obtenha seu token para informá-lo no plugin.
+![Informar a URL de noficações no sandbox](http://uploaddeimagens.com.br/images/000/973/149/original/Screenshot_4.png?1499005146)
+
+
 
 
