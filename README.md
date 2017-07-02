@@ -85,5 +85,9 @@ Também obtenha seu token para informá-lo no plugin.
 ![Informar a URL de noficações no sandbox](http://uploaddeimagens.com.br/images/000/973/149/original/Screenshot_4.png?1499005146)
 
 
+### TODO LIST ###
 
+Esta é a lista de coisas que eu imagino que sejam possíveis de desenvolver e que eu espero obter ajuda da comunidade de desenvolvedores, e também espero desenvolver algumas delas.
 
+![Item 1]
+![Item 2]
