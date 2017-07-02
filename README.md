@@ -103,7 +103,7 @@ Se deseja ver o plugin em funcionamento no Wordpress você pode entrar em:
 
 [https://erpnanuv.com.br/ecommerce/](https://erpnanuv.com.br/ecommerce/)
 
-** Comprador de teste **
+**Comprador de teste**
 Para testar o checkout com um comprador cadastrado, utilize o e-mail abaixo. Caso sinta a necessidade de fazer um checkout com um usuário não cadastrado, basta informar qualquer e-mail no formato xxxxxxx@sandbox.pagseguro.com.br.
 
 Este comprador de teste só pode ser utilizado para se autenticar no checkout do PagSeguro Sandbox.
@@ -122,4 +122,4 @@ Telefone: qualquer válido
 
 Não me reposabilizo por bugs que possam existir no plugin (se encontrar algum, informe para que possa ser corrigido).
 
-** Se concorda com este termo pode usar. **
+**Se concorda com este termo pode usar.**
