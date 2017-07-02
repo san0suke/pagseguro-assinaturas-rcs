@@ -109,7 +109,17 @@ Para testar o checkout com um comprador cadastrado, utilize o e-mail abaixo. Cas
 Este comprador de teste só pode ser utilizado para se autenticar no checkout do PagSeguro Sandbox.
 
 Email: c33483869638694030024@sandbox.pagseguro.com.br
+
 Senha: 4988B671461u9537
+
 Código de segurança do cartão: Qualquer com 3 dígitos
+
 CPF: qualquer válido
+
 Telefone: qualquer válido
+
+### CONDIÇÕES DE USO ###
+
+Não me reposabilizo por bugs que possam existir no plugin (se encontrar algum, informe para que possa ser corrigido).
+
+** Se concorda com este termo pode usar. **
