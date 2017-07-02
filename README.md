@@ -64,12 +64,17 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 
 ### Configurações no PagSeguro: ###
-Isto é importante! Sem a etapa abaixo o status dos seus pedidos não serão atualizados.
 
+Isto é importante! Sem as etapa abaixo o status dos seus pedidos não serão atualizados.
+
+Entre em "WooCommerce" > "Configurações" > "Checkout" > "Pagseguro Assinaturas".
 O plugin irá gerar a url de notificação correta para seu site no formato: "https://seusite.com.br/?wc-api=PGA_Gateway"
 ![Configurações do plugin.](https://uploaddeimagens.com.br/images/000/972/674/original/Screenshot_1.png?1498939879)
 
-Se você desejar testar o plugin antes de usar oficialmente faça a etapa seguinte, caso contrário pule ela:
+Se você desejar testar o plugin antes de usar oficialmente faça a etapa seguinte.
+
+Preencha o campo "Definir URL para receber as notificações" com a URL que o plugin gerou.
+Também copie seu token e seu email para informar na tela do plugin:
 ![Informar a URL de noficações no sandbox](http://uploaddeimagens.com.br/images/000/972/688/original/Screenshot_3.png?1498940426)
 
 
