@@ -120,6 +120,6 @@ Telefone: qualquer válido
 
 ### CONDIÇÕES DE USO ###
 
-Não me reposabilizo por bugs que possam existir no plugin (se encontrar algum, informe para que possa ser corrigido).
+Não me responsabilizo por bugs que possam existir no plugin (se encontrarem algum, informe para que possa ser corrigido).
 
 **Se concorda com este termo pode usar.**
