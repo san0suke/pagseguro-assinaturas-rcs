@@ -89,5 +89,27 @@ Também obtenha seu token para informá-lo no plugin.
 
 Esta é a lista de coisas que eu imagino que sejam possíveis de desenvolver e que eu espero obter ajuda da comunidade de desenvolvedores, e também espero desenvolver algumas delas.
 
-![Item 1]
-![Item 2]
+1. Adicionar o Chekout por Lightbox para que os clientes não precisem sair do seu site.
+
+2. Adicionar o checkout Transparente para que não precisem nem ver o site do pagseguro.
+
+3. Verificar e adicionar as seguintes opções se existirem: Taxa de contratação, Período grátis, Periodicidade das cobranças
+
+4. Colocar na loja do Wordpress quando a comunidade confirmar que está tudo funcionado.
+
+### LOJA DE EXEMPLO ###
+
+Se deseja ver o plugin em funcionamento no Wordpress você pode entrar em:
+
+[https://erpnanuv.com.br/ecommerce/](https://erpnanuv.com.br/ecommerce/)
+
+** Comprador de teste **
+Para testar o checkout com um comprador cadastrado, utilize o e-mail abaixo. Caso sinta a necessidade de fazer um checkout com um usuário não cadastrado, basta informar qualquer e-mail no formato xxxxxxx@sandbox.pagseguro.com.br.
+
+Este comprador de teste só pode ser utilizado para se autenticar no checkout do PagSeguro Sandbox.
+
+Email: c33483869638694030024@sandbox.pagseguro.com.br
+Senha: 4988B671461u9537
+Código de segurança do cartão: Qualquer com 3 dígitos
+CPF: qualquer válido
+Telefone: qualquer válido
