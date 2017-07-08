@@ -361,7 +361,7 @@ class PGA_Gateway extends WC_Payment_Gateway {
         }
 
         ob_start();
-        include plugin_dir_path(dirname(__FILE__)) . 'pagseguro-assinaturas-rcs/includes/transparent-checkout.php';
+        include 'includes/transparent-checkout.php';
         $html = ob_get_clean();
 
         wp_enqueue_script('pagseguro-assinaturas-rcs-checkout');
