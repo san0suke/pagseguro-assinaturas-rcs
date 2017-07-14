@@ -26,7 +26,9 @@ class PGA_Gateway extends WC_Payment_Gateway {
         // API options.
         $this->api = $this->get_option('api', 'tc');
         $this->token = $this->get_option('token');
+        $this->token_sandbox = $this->get_option('token_sandbox');
         $this->email = $this->get_option('email');
+        $this->email_sandbox = $this->get_option('email_sandbox');
         $this->token_notificacao = $this->get_option('token_notificacao');
         $this->outras_formas_pagseguro = $this->get_option('outras_formas_pagseguro', 'yes');
 
@@ -127,6 +129,20 @@ class PGA_Gateway extends WC_Payment_Gateway {
                 'title' => __('Email do Pagseguro', 'pagseguro-assinaturas-rcs'),
                 'type' => 'text',
                 'description' => __('Digite seu email do pagseguro; ele é necessário para finalizar o pagamento.', 'pagseguro-assinaturas-rcs'),
+                'desc_tip' => true,
+                'default' => ''
+            ),
+            'token_sandbox' => array(
+                'title' => __('Token de acesso - SandBox', 'pagseguro-assinaturas-rcs'),
+                'type' => 'text',
+                'description' => __('Digite seu Token de Accesso no SandBox; ele é necessário para finalizar o pagamento com este recurso ativado.', 'pagseguro-assinaturas-rcs'),
+                'desc_tip' => true,
+                'default' => ''
+            ),
+            'email_sandbox' => array(
+                'title' => __('Email do Pagseguro - SandBox', 'pagseguro-assinaturas-rcs'),
+                'type' => 'text',
+                'description' => __('Digite seu email do pagseguro no SandBox; ele é necessário para finalizar o pagamento com este recurso ativado.', 'pagseguro-assinaturas-rcs'),
                 'desc_tip' => true,
                 'default' => ''
             ),
@@ -506,4 +522,5 @@ class PGA_Gateway extends WC_Payment_Gateway {
             $this->log->add('pagseguro-assinaturas-rcs', $debug_log);
         }
     }
+
 }

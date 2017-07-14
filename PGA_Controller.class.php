@@ -11,6 +11,8 @@ class PGA_Controller {
         if ('yes' == $pga_gateway->sandbox) {
             $this->baseUrlAssinatura = 'https://ws.sandbox.pagseguro.uol.com.br/v2/pre-approvals/';
             $this->urlAssinaturasCheckout = 'https://sandbox.pagseguro.uol.com.br/v2/pre-approvals/request.html';
+            $this->gateway->token = $this->gateway->token_sandbox;
+            $this->gateway->email = $this->gateway->email_sandbox;
         }
     }
 
@@ -64,7 +66,7 @@ class PGA_Controller {
             'ajax_url' => admin_url('admin-ajax.php'),
             'processando_compra' => __('Aguarde... Você está sendo redirecionado para o Pagseguro', 'pagseguro-assinaturas-rcs')
         );
-        if(!empty($_GET['code'])) {
+        if (!empty($_GET['code'])) {
             $dadosPagseguro['processando_compra'] = __('Aguarde... Estamos atualizando o status do seu pagamento', 'pagseguro-assinaturas-rcs');
         }
         wp_localize_script('pagseguro-assinaturas-rcs-checkout', 'arrPagseguro', $dadosPagseguro);
@@ -103,7 +105,7 @@ class PGA_Controller {
      * @param  string $title   Email title.
      * @param  string $message Email message.
      *
-     * @return void 
+     * @return void
      */
     function send_email($email, $subject, $title, $message) {
         global $woocommerce;
