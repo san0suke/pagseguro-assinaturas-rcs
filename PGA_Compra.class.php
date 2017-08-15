@@ -230,7 +230,7 @@ class PGA_Compra {
     }
 
     function plano_description($produto_meta) {
-        $intervalo = $produto_meta['_intervalo_ciclo_plano'][0] > 0 ? $produto_meta['_intervalo_ciclo_plano'][0] : 30;
+        $intervalo = @$produto_meta['_intervalo_ciclo_plano'][0] > 0 ? @$produto_meta['_intervalo_ciclo_plano'][0] : 30;
         if ($intervalo % 30 == 0 && $intervalo > 30) {
             $intervalo_descricao = sprintf(__('de %d mêses', 'pagseguro-assinaturas-rcs'), ($intervalo / 30));
         } else if ($intervalo == 30) {
@@ -251,7 +251,7 @@ class PGA_Compra {
 
     function intervalo_description($produto_meta) {
         if (!empty($produto_meta['_is_plano']) && $produto_meta['_is_plano'][0] == 'yes') {
-            $intervalo = $produto_meta['_intervalo_ciclo_plano'][0] > 0 ? $produto_meta['_intervalo_ciclo_plano'][0] : 30;
+            $intervalo = @$produto_meta['_intervalo_ciclo_plano'][0] > 0 ? @$produto_meta['_intervalo_ciclo_plano'][0] : 30;
             if ($intervalo % 30 == 0 && $intervalo > 30) {
                 $intervalo_descricao = sprintf(__('a cada %d mêses', 'pagseguro-assinaturas-rcs'), ($intervalo / 30));
             } else if ($intervalo == 30) {
@@ -274,7 +274,9 @@ class PGA_Compra {
     function pga_woocommerce_after_shop_loop_item() {
         global $product;
 		if ( method_exists( $product, 'get_id' ) ) {
+			$post_meta = get_post_meta($product->get_id());
 		} else {
+			$post_meta = get_post_meta($product->id);
 		}		
         if (!empty($post_meta['_is_plano']) && $post_meta['_is_plano'][0] == 'yes') {
 //            echo $this->plano_description($post_meta);
