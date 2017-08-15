@@ -10,6 +10,11 @@ if (!defined('ABSPATH')) {
 $pga_compra = new PGA_Compra($this->controller);
 $total_taxa_contr = $pga_compra->get_taxa_contratacao_total_carrinho($order);
 $plano_description = $pga_compra->get_order_intervalo($order);
+if(method_exists($order,'get_id')){
+	$pga_order_id = intval($order->get_id());
+}else{
+	$pga_order_id = intval($order->id);
+}
 ?>
 
 <div id="extra_order_details" >
@@ -31,12 +36,12 @@ $plano_description = $pga_compra->get_order_intervalo($order);
 
 <form action="" method="post" id="woocommerce-pagseguro-assinaturas-rcs-payment-form">
     <input type="hidden" name="code_pagseguro" id="code_pagseguro" value="<?php echo !empty($_GET['code']) ? $_GET['code'] : ""; ?>" />
-    <input type="hidden" name="order_id" id="woocommerce-pagseguro-order-id" value="<?php echo intval($order->id); ?>" />
+    <input type="hidden" name="order_id" id="woocommerce-pagseguro-order-id" value="<?php echo $pga_order_id; ?>" />
     <input type="hidden" name="action" id="action" value="finalizarcompra" />
     <input type="hidden" name="url_retorno" id="url_retorno" value="<?php echo $this->get_return_url($order); ?>" />
 </form>
 
 <div class="show_after_payment" style="display:none">
-    <h3><?php echo sprintf(__('Seu pedido #%d foi pago com sucesso', 'pagseguro-assinaturas-rcs'), $order->id); ?></h3>
+    <h3><?php echo sprintf(__('Seu pedido #%d foi pago com sucesso', 'pagseguro-assinaturas-rcs'), $pga_order_id); ?></h3>
     <p><?php echo __('Seu pagamento foi recebido no pelo Pagseguro.', 'pagseguro-assinaturas-rcs'); ?></p>
 </div>
