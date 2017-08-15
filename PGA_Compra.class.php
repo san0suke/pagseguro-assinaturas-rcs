@@ -251,7 +251,8 @@ class PGA_Compra {
 
     function pga_woocommerce_after_shop_loop_item() {
         global $product;
-        $post_meta = get_post_meta($product->id);
+        //Deprecated $post_meta = get_post_meta($product->id);
+		$post_meta = get_post_meta($product->get_id());
         if (!empty($post_meta['_is_plano']) && $post_meta['_is_plano'][0] == 'yes') {
 //            echo $this->plano_description($post_meta);
         }
