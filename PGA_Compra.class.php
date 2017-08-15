@@ -29,9 +29,14 @@ class PGA_Compra {
         }
         if ($this->controller->gateway->outras_formas_pagseguro == 'yes' && !$permitirOutros) {
             foreach ($available_gateways as $gateway_id => $gateway) {
-                if ($gateway_id != $this->controller->gateway->id) {
-                    unset($available_gateways[$gateway_id]);
-                }
+				if ( method_exists( $this->controller->gateway, 'get_id' ) ) {  
+					$controller_gateway_id = $this->controller->gateway->get_id();
+				} else {
+					$controller_gateway_id = $this->controller->gateway->id;
+				}
+				if ($gateway_id != $controller_gateway_id) {
+					unset($available_gateways[$gateway_id]);
+				}
             }
         }
         return $available_gateways;
@@ -39,7 +44,12 @@ class PGA_Compra {
 
     function nao_permitir_pga($available_gateways) {
         foreach ($available_gateways as $gateway_id => $gateway) {
-            if ($gateway_id == $this->controller->gateway->id) {
+			if ( method_exists( $this->controller->gateway, 'get_id' ) ) {  
+				$controller_gateway_id = $this->controller->gateway->get_id();
+			} else {
+				$controller_gateway_id = $this->controller->gateway->id;
+			}
+            if ($gateway_id == $controller_gateway_id) {
                 unset($available_gateways[$gateway_id]);
             }
         }
@@ -167,7 +177,11 @@ class PGA_Compra {
 
     function pga_woocommerce_my_account_my_orders_actions($actions, $order) {
         if ($order->status != 'cancelled' && !array_key_exists('cancel', $actions)) {
-            $actions['force_cancel']['url'] = add_query_arg('force_cancel', $order->id, PGA_Utils::get_current_url());
+			if ( method_exists( $order, 'get_id' ) ) {
+				$actions['force_cancel']['url'] = add_query_arg('force_cancel', $order->get_id(), PGA_Utils::get_current_url());
+			} else {
+				$actions['force_cancel']['url'] = add_query_arg('force_cancel', $order->id, PGA_Utils::get_current_url());
+			}            
             $actions['force_cancel']['name'] = __('Cancelar', 'woocommerce');
         }
 
@@ -190,7 +204,11 @@ class PGA_Compra {
     }
 
     function pga_woocommerce_product_single_add_to_cart_text($texto, $produto) {
-        $is_plano = get_post_meta($produto->id, '_is_plano', true) == 'yes';
+		if ( method_exists( $produto, 'get_id' ) ) {
+			$is_plano = get_post_meta($produto->get_id(), '_is_plano', true) == 'yes';
+		} else {
+			$is_plano = get_post_meta($produto->id, '_is_plano', true) == 'yes';
+		}
         if ($is_plano) {
             $label = $this->controller->gateway->label_assinar;
             if ($label) {
@@ -203,7 +221,11 @@ class PGA_Compra {
     }
 
     function pga_woocommerce_is_sold_individually($is_sold, $produto) {
-        $is_sold = get_post_meta($produto->id, '_is_plano', true) == 'yes';
+		if ( method_exists( $produto, 'get_id' ) ) {
+        	$is_sold = get_post_meta($produto->get_id(), '_is_plano', true) == 'yes';
+		} else {
+        	$is_sold = get_post_meta($produto->id, '_is_plano', true) == 'yes';
+		}        
         return $is_sold;
     }
 
@@ -251,15 +273,20 @@ class PGA_Compra {
 
     function pga_woocommerce_after_shop_loop_item() {
         global $product;
-        //Deprecated $post_meta = get_post_meta($product->id);
-		$post_meta = get_post_meta($product->get_id());
+		if ( method_exists( $product, 'get_id' ) ) {
+		} else {
+		}		
         if (!empty($post_meta['_is_plano']) && $post_meta['_is_plano'][0] == 'yes') {
 //            echo $this->plano_description($post_meta);
         }
     }
 
     function pga_woocommerce_quantity_input_args($args, $produto) {
-        $is_plano = get_post_meta($produto->id, '_is_plano', true) == 'yes';
+		if ( method_exists( $produto, 'get_id' ) ) {
+        	$is_plano = get_post_meta($produto->get_id(), '_is_plano', true) == 'yes';
+		} else {
+        	$is_plano = get_post_meta($produto->id, '_is_plano', true) == 'yes';
+		}
         if ($is_plano) {
             $args['input_value'] = 1; // Starting value
             $args['max_value'] = 1; // Maximum value
