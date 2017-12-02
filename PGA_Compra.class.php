@@ -79,6 +79,9 @@ class PGA_Compra {
         $add_produto_meta = get_post_meta($produto_id);
         $add_prod_is_plano = $add_produto_meta['_is_plano'][0] != null ? $add_produto_meta['_is_plano'][0] : 'no';
 
+	// Esvazia o carrinho para substituir pelo produto sendo escolhido
+	WC()->cart->empty_cart();
+	    
         foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
             $cart_produto_meta = get_post_meta($cart_item['product_id']);
             $cart_prod_is_plano = empty($cart_produto_meta['_is_plano']) || $cart_produto_meta['_is_plano'][0] == null ? 'no' : $cart_produto_meta['_is_plano'][0];
